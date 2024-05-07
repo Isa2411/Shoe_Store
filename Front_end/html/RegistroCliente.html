@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Clientes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="css/pagina.css">
+    <script src="js/paciente.js"></script>
+
+    <style>
+        #titulo {
+            background-color: #535353;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        .row {
+            background-color: #828383;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para la alineación de los elementos del formulario */
+        .form-label {
+            margin-bottom: 0.5rem;
+        }
+
+        .form-control {
+            margin-bottom: 1rem;
+        }
+
+        .btn-separator {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="titulo" class="container py-4">
+        <h2>Registrar clientes</h2>
+    </div>
+
+    <div id="formulario" class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <label for="tipo_documento" class="form-label">Tipo identificación:</label>
+                <select class="form-select" id="tipo_documento" name="tipo_documento" focusout="validarTipo_documento(this);">
+                    <option selected disabled value="">Seleccione una opción</option>
+                    <option value="RC">Registro civil</option>
+                    <option value="TI">Tarjeta de identidad</option>
+                    <option value="CC">Cédula de ciudadanía</option>
+                    <option value="CE">Cédula de extranjería</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="numero_documento" class="form-label">Número documento:</label>
+                <input type="text" class="form-control" name="numero_documento" id="numero_documento" step="1"
+                    onfocusout="validarNumeroIdentificacion(this);">
+            </div>
+            <div class="col-md-4">
+                <label for="nombre" class="form-label">Nombre:</label>
+                <input type="text" class="form-control" name="nombre" id="nombre"
+                    onfocusout="validarApellido(this);">
+            </div>
+            <div class="col-md-4">
+                <label for="apellido" class="form-label">Apellido:</label>
+                <input type="text" class="form-control" name="apellido" id="apellido"
+                    onfocusout="validarNombreApellido(this);">
+            </div>
+            <div class="col-md-4">
+                <label for="Teléfono" class="form-label">Teléfono:</label>
+                <input type="text" class="form-control" name="teléfono" id="teléfono" onfocusout="validarteléfono(this);">
+            </div>
+            <div class="col-md-4">
+                <label for="Dirección" class="form-label">Dirección:</label>
+                <input type="text" class="form-control" name="Dirección" id="Dirección">
+            </div>
+            <div class="col-md-4">
+                <label for="Ciudad" class="form-label">Ciudad:</label>
+                <input type="text" class="form-control" name="Ciudad" id="Ciudad"
+                    onfocusout="validarCiudad(this);">
+            </div>
+            <div class="col-md-4">
+                <label for="estado" class="form-label">Estado:</label>
+                <select name="estado" id="estado" class="form-select">
+                    <option selected disabled value="">¿Cuál es su estado actual?</option>
+                    <option value="Habilitado">Habilitado</option>
+                    <option value="Deshabilitado">Deshabilitado</option>
+                </select>
+            </div>
+            <div class="col-12 mt-3">
+                <div class="row justify-content-center">
+                    <div class="col-md-auto">
+                        <button class="btn btn-secondary btn-separator" onclick="window.location.href='pagina.html';"
+                            type="button">Volver</button>
+                    </div>
+                    <div class="col-md-auto">
+                        <button class="btn btn-primary btn-separator" type="button"
+                            onclick="registrarCliente();">Registrar</button>
+                    </div>
+                    <div class="col-md-auto">
+                        <button class="btn btn-secondary btn-separator"
+                            onclick="window.location.href='listapaciente.html';" type="button">Lista de
+                            clientes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

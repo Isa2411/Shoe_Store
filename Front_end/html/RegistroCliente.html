@@ -13,8 +13,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="css/pagina.css">
-    <script src="js/paciente.js"></script>
+    <link rel="stylesheet" href="/Front_end/css/paginaweb.css">
+    <script src="/Front_end/js/clientes.js"></script>
 
     <style>
         #titulo {
@@ -99,14 +99,14 @@
                 <label for="estado" class="form-label">Estado:</label>
                 <select name="estado" id="estado" class="form-select">
                     <option selected disabled value="">¿Cuál es su estado actual?</option>
-                    <option value="Habilitado">Habilitado</option>
-                    <option value="Deshabilitado">Deshabilitado</option>
+                    <option value="Habilitado">Activar</option>
+                    <option value="Deshabilitado">Desactivar</option>
                 </select>
             </div>
             <div class="col-12 mt-3">
                 <div class="row justify-content-center">
                     <div class="col-md-auto">
-                        <button class="btn btn-secondary btn-separator" onclick="window.location.href='pagina.html';"
+                        <button class="btn btn-secondary btn-separator" onclick="window.location.href='paginaweb.html';"
                             type="button">Volver</button>
                     </div>
                     <div class="col-md-auto">
@@ -115,7 +115,7 @@
                     </div>
                     <div class="col-md-auto">
                         <button class="btn btn-secondary btn-separator"
-                            onclick="window.location.href='listapaciente.html';" type="button">Lista de
+                            onclick="window.location.href='listaClientes.html';" type="button">Lista de
                             clientes</button>
                     </div>
                 </div>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Cliente</title>
+    <meta charset="UTF-8">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="stylesheet" href="/Front_end/css/paginaweb.css">
+    <script src="/Front_end/js/clientes.js"></script>
+
+    <style>
+        #titulo {
+            background-color: #606061;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        .tabla-container {
+            overflow-x: auto; /* Esto permite el desplazamiento horizontal si es necesario */
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #7d7d7e;
+            /* Color de fondo azul claro */
+        }
+
+        .tabla-container table {
+            background-color: #808181;
+            /* Color de fondo azul más claro para la tabla */
+        }
+
+        .tabla-container th,
+        .tabla-container td {
+            border: none;
+        }
+
+        /* Ajuste del modal */
+        .modal-content {
+            width: 100%;
+            max-width: none;
+        }
+
+        @media (min-width: 576px) {
+            .modal-dialog {
+                max-width: 100%;
+                margin: 1.75rem auto;
+            }
+
+            .btn-volver {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Title -->
+    <div id="titulo" class="container py-4">
+        <h2>Lista de clientes</h2>
+    </div>
+
+    <!-- Botón Volver -->
+    <div class="container">
+        <div class="btn-volver">
+            <button class="btn btn-secondary" onclick="window.location.href='registroCliente.html';"
+                type="button">Volver</button>
+        </div>
+    </div>
+
+    <!-- Tabla de Registro -->
+    <div class="tabla-container container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="filtrar" class="form-label">Filtrar:</label>
+                    <input type="text" class="form-control" name="filtroPaciente" id="filtroPaciente" step="1" 
+                    onfocusout="filtrarPaciente(this);">
+                </div>
+                <div class="col-md-4">
+                    <label for="filtrar" class="form-label">Filtrar por estado:</label>
+                    <br>
+                    <select id="estado" onchange="filtrarCliente()">
+                        <option value="Estados">Estados</option>
+                        <option value="Activar">Activar</option>
+                        <option value="Desactivar">Desactivar</option>
+                      </select>
+                </div>
+            </div>
+        </div>
+
+        
+        <table class="table table-hover mt-2" id="cuerpoTablaPaciente">
+            <thead class="table-light">
+                <tr>
+                    <th scope="col">Código de paciente</th>
+                    <th scope="col">Tipo de identificación</th>
+                    <th scope="col">N° de identificación</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Dirección </th>
+                    <th scope="col">Ciudad</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTablaCliente">
+                <!-- Aquí se mostrarán los datos del cliente -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal Registro Persona -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        style="padding-right: 300px;">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content" style="width: 800px; ">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modificar cliente</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <!-- Contenido del modal -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success"><i
+                            class="fa-regular fa-floppy-disk"></i>Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

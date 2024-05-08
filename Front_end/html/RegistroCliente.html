@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -13,23 +13,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <link rel="stylesheet" href="/Front_end/css/paginaweb.css">
     <script src="/Front_end/js/clientes.js"></script>
 
     <style>
-        #titulo {
-            background-color: #535353;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 50px;
-            margin-bottom: 20px;
-        }
-
         .row {
-            background-color: #828383;
             padding: 20px;
             border-radius: 10px;
             margin-bottom: 20px;
@@ -59,7 +48,8 @@
         <div class="row">
             <div class="col-md-4">
                 <label for="tipo_documento" class="form-label">Tipo identificación:</label>
-                <select class="form-select" id="tipo_documento" name="tipo_documento" focusout="validarTipo_documento(this);">
+                <select class="form-select" id="tipo_documento" name="tipo_documento"
+                    focusout="validarTipo_documento(this);">
                     <option selected disabled value="">Seleccione una opción</option>
                     <option value="RC">Registro civil</option>
                     <option value="TI">Tarjeta de identidad</option>
@@ -68,55 +58,46 @@
                 </select>
             </div>
             <div class="col-md-4">
-                <label for="numero_documento" class="form-label">Número documento:</label>
-                <input type="text" class="form-control" name="numero_documento" id="numero_documento" step="1"
+                <label for="numero_identificacion" class="form-label">Número identificación:</label>
+                <input type="text" class="form-control" name="numero_documento" id="numero_identificacion" step="1"
                     onfocusout="validarNumeroIdentificacion(this);">
             </div>
             <div class="col-md-4">
-                <label for="nombre" class="form-label">Nombre:</label>
-                <input type="text" class="form-control" name="nombre" id="nombre"
-                    onfocusout="validarApellido(this);">
-            </div>
-            <div class="col-md-4">
-                <label for="apellido" class="form-label">Apellido:</label>
-                <input type="text" class="form-control" name="apellido" id="apellido"
+                <label for="primer_nombre" class="form-label">Nombre:</label>
+                <input type="text" class="form-control" name="Nombre" id="Nombre"
                     onfocusout="validarNombreApellido(this);">
             </div>
             <div class="col-md-4">
-                <label for="Teléfono" class="form-label">Teléfono:</label>
-                <input type="text" class="form-control" name="teléfono" id="teléfono" onfocusout="validarteléfono(this);">
+                <label for="Apellido" class="form-label">Apellido:</label>
+                <input type="text" class="form-control" name="Apellido" id="Apellido"
+                    onfocusout="validarNombreApellido(this);">
             </div>
             <div class="col-md-4">
-                <label for="Dirección" class="form-label">Dirección:</label>
-                <input type="text" class="form-control" name="Dirección" id="Dirección">
+                <label for="telefono" class="form-label">Teléfono:</label>
+                <input type="text" class="form-control" name="telefono" id="telefono"
+                    onfocusout="validartelefono(this);">
             </div>
             <div class="col-md-4">
-                <label for="Ciudad" class="form-label">Ciudad:</label>
-                <input type="text" class="form-control" name="Ciudad" id="Ciudad"
-                    onfocusout="validarCiudad(this);">
+                <label for="direccion" class="form-label">Dirección:</label>
+                <input type="text" class="form-control" name="direccion" id="direccion">
+            </div>
+            <div class="col-md-4">
+                <label for="ciudad" class="form-label">Ciudad:</label>
+                <input type="text" class="form-control" name="ciudad" id="ciudad">
             </div>
             <div class="col-md-4">
                 <label for="estado" class="form-label">Estado:</label>
                 <select name="estado" id="estado" class="form-select">
                     <option selected disabled value="">¿Cuál es su estado actual?</option>
-                    <option value="Habilitado">Activar</option>
-                    <option value="Deshabilitado">Desactivar</option>
+                    <option value="Habilitado">Habilitado</option>
+                    <option value="Deshabilitado">Deshabilitado</option>
                 </select>
             </div>
             <div class="col-12 mt-3">
                 <div class="row justify-content-center">
                     <div class="col-md-auto">
-                        <button class="btn btn-secondary btn-separator" onclick="window.location.href='paginaweb.html';"
-                            type="button">Volver</button>
-                    </div>
-                    <div class="col-md-auto">
-                        <button class="btn btn-primary btn-separator" type="button"
-                            onclick="registrarCliente();">Registrar</button>
-                    </div>
-                    <div class="col-md-auto">
-                        <button class="btn btn-secondary btn-separator"
-                            onclick="window.location.href='listaClientes.html';" type="button">Lista de
-                            clientes</button>
+                        <button type="button" class="btn btn-success" 
+                        onclick="RegistroCliente">Agregar Cliente</button>
                     </div>
                 </div>
             </div>

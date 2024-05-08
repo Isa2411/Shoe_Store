@@ -27,7 +27,7 @@ body {
     transition: all 0.3s ease;
     border-bottom: 2px solid transparent;
     font-size: 15px;
-    margin-right: 5px;
+    margin-right: 50px;
 }
 .container .menu a:hover{
     border-bottom: 2px solid #6b6969;
@@ -74,4 +74,42 @@ nav ul li a img {
     margin-left: 250px;
     padding: 20px;
 }
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-box {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.manual-link a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.menu {
+    margin-top: 40px; /* Para separar la barra de menú del encabezado */
+}
+
 

@@ -1,0 +1,81 @@
+.row {
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para la alineación de los elementos del formulario */
+.form-label {
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    margin-bottom: 1rem;
+}
+
+.btn-separator {
+    margin-top: 10px;
+}
+
+
+/* Estilos para el título */
+#titulo {
+    text-align: center;
+}
+
+/* Estilos para el contenedor del formulario */
+#formulario {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para la fila */
+.row {
+    margin-bottom: 20px;
+}
+
+/* Estilos para las etiquetas del formulario */
+.form-label {
+    margin-bottom: 0.5rem;
+}
+
+/* Estilos para los campos de entrada del formulario */
+.form-control {
+    margin-bottom: 1rem;
+}
+
+/* Estilos para el botón */
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos para el botón de éxito */
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+}
+
+/* Estilos para el botón de éxito al pasar el cursor sobre él */
+.btn-success:hover {
+    background-color: #218838;
+}
+
+/* Estilos para el botón de éxito al hacer clic en él */
+.btn-success:active {
+    background-color: #1e7e34;
+}
+
+/* Estilos para el botón de éxito al estar deshabilitado */
+.btn-success:disabled {
+    background-color: #6c757d;
+}
+
+/* Estilos para el botón de éxito al estar deshabilitado y pasar el cursor sobre él */
+.btn-success:disabled:hover {
+    background-color: #6c757d;
+}

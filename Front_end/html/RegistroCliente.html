@@ -17,92 +17,111 @@
     <link rel="stylesheet" href="/Front_end/css/paginaweb.css">
     <script src="/Front_end/js/clientes.js"></script>
 
-    <style>
-        .row {
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        /* Estilos para la alineación de los elementos del formulario */
-        .form-label {
-            margin-bottom: 0.5rem;
-        }
-
-        .form-control {
-            margin-bottom: 1rem;
-        }
-
-        .btn-separator {
-            margin-top: 10px;
-        }
-    </style>
 </head>
 
 <body>
-    <div id="titulo" class="container py-4">
-        <h2>Registrar clientes</h2>
-    </div>
+    <header class="header">
+        <div class="container">
+            <div class="btn-menu">
+                <label for="btn-menu">☰</label>
+            </div>
+            <nav class="menu">
+                <a href="/Front_end/html/paginaweb.html">Inicio</a>
+                <a href="">Manual</a>
+            </nav>
+        </div>
+    </header>
 
-    <div id="formulario" class="container mt-5">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4">
-                <label for="tipo_documento" class="form-label">Tipo identificación:</label>
-                <select class="form-select" id="tipo_documento" name="tipo_documento"
-                    focusout="validarTipo_documento(this);">
-                    <option selected disabled value="">Seleccione una opción</option>
-                    <option value="RC">Registro civil</option>
-                    <option value="TI">Tarjeta de identidad</option>
-                    <option value="CC">Cédula de ciudadanía</option>
-                    <option value="CE">Cédula de extranjería</option>
-                </select>
-            </div>
-            <div class="col-md-4">
-                <label for="numero_identificacion" class="form-label">Número identificación:</label>
-                <input type="text" class="form-control" name="numero_documento" id="numero_identificacion" step="1"
-                    onfocusout="validarNumeroIdentificacion(this);">
-            </div>
-            <div class="col-md-4">
-                <label for="primer_nombre" class="form-label">Nombre:</label>
-                <input type="text" class="form-control" name="Nombre" id="Nombre"
-                    onfocusout="validarNombreApellido(this);">
-            </div>
-            <div class="col-md-4">
-                <label for="Apellido" class="form-label">Apellido:</label>
-                <input type="text" class="form-control" name="Apellido" id="Apellido"
-                    onfocusout="validarNombreApellido(this);">
-            </div>
-            <div class="col-md-4">
-                <label for="telefono" class="form-label">Teléfono:</label>
-                <input type="text" class="form-control" name="telefono" id="telefono"
-                    onfocusout="validartelefono(this);">
-            </div>
-            <div class="col-md-4">
-                <label for="direccion" class="form-label">Dirección:</label>
-                <input type="text" class="form-control" name="direccion" id="direccion">
-            </div>
-            <div class="col-md-4">
-                <label for="ciudad" class="form-label">Ciudad:</label>
-                <input type="text" class="form-control" name="ciudad" id="ciudad">
-            </div>
-            <div class="col-md-4">
-                <label for="estado" class="form-label">Estado:</label>
-                <select name="estado" id="estado" class="form-select">
-                    <option selected disabled value="">¿Cuál es su estado actual?</option>
-                    <option value="Habilitado">Habilitado</option>
-                    <option value="Deshabilitado">Deshabilitado</option>
-                </select>
-            </div>
-            <div class="col-12 mt-3">
-                <div class="row justify-content-center">
-                    <div class="col-md-auto">
-                        <button type="button" class="btn btn-success" 
-                        onclick="RegistroCliente">Agregar Cliente</button>
+            <div class="col-md-3">
+                <!-- Barra lateral -->
+                <div class="sidebar">
+                    <div class="logo">
+                        <a href="./paginaweb.html"></a>
+                        <img src="/Front_end/img/Logo.jpg.png" alt="Shoes Store Logo">
+                        <h2>Shoes Store</h2>
                     </div>
+                    <nav>
+                        <ul>
+                            <li><a href="./paginaweb.html"><img src="" alt="">Dashboard</a></li>
+                            <li><a href="./ListaClientes.html"><img src="" alt="">Clientes</a></li>
+                            <li><a href="./ListaProductos.html"><img src="" alt="">Productos</a></li>
+                            <li><a href="./ListaVentas.html"><img src="" alt="">Ventas</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
-        </div>
-    </div>
+            <div class="col-md-9">
+                <div id="titulo" class="container py-4">
+                    <h2>Registrar clientes</h2>
+                </div>
+
+                <div id="formulario" class="container mt-5">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="tipo_documento" class="form-label">Tipo identificación:</label>
+                            <select class="form-select" id="tipo_documento" name="tipo_documento"
+                                focusout="validarTipo_documento(this);">
+                                <option selected disabled value="">Seleccione una opción</option>
+                                <option value="RC">Registro civil</option>
+                                <option value="TI">Tarjeta de identidad</option>
+                                <option value="CC">Cédula de ciudadanía</option>
+                                <option value="CE">Cédula de extranjería</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="numero_identificacion" class="form-label">Número identificación:</label>
+                            <input type="text" class="form-control" name="numero_documento" id="numero_identificacion"
+                                step="1" onfocusout="validarNumeroIdentificacion(this);">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="primer_nombre" class="form-label">Nombre:</label>
+                            <input type="text" class="form-control" name="Nombre" id="Nombre"
+                                onfocusout="validarNombreApellido(this);">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="Apellido" class="form-label">Apellido:</label>
+                            <input type="text" class="form-control" name="Apellido" id="Apellido"
+                                onfocusout="validarNombreApellido(this);">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="telefono" class="form-label">Teléfono:</label>
+                            <input type="text" class="form-control" name="telefono" id="telefono"
+                                onfocusout="validartelefono(this);">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="direccion" class="form-label">Dirección:</label>
+                            <input type="text" class="form-control" name="direccion" id="direccion">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="ciudad" class="form-label">Ciudad:</label>
+                            <input type="text" class="form-control" name="ciudad" id="ciudad">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="estado" class="form-label">Estado:</label>
+                            <select name="estado" id="estado" class="form-select">
+                                <option selected disabled value="">¿Cuál es su estado actual?</option>
+                                <option value="Habilitado">Habilitado</option>
+                                <option value="Deshabilitado">Deshabilitado</option>
+                            </select>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <div class="row justify-content-center">
+                                <div class="col-md-auto">
+                                    <button class="btn btn-primary" class="btn btn-add-client" type="button"
+                                        onclick="window.location.href='paginaweb.html';">Volver</button>
+                                    <button type="button" class="btn btn-success" onclick="RegistroCliente.html">Agregar
+                                        Cliente</button>
+                                    <button class="btn btn-secondary" class="btn btn-add-client" type="button"
+                                        onclick="window.location.href='ListaClientes.html';">Lista Cliente</button>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
 </body>
 
 </html>

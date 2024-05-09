@@ -2,111 +2,108 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de productos</title>
-    <meta charset="UTF-8">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <script src="/Front_end/js/productos.js"></script>
-
-    <style>
-
-        .tabla-container {
-            overflow-x: auto; /* Esto permite el desplazamiento horizontal si es necesario */
-            margin-top: 20px;
-            padding: 20px;
-            border-radius: 10px;
-            
-        }
-
-
-        .tabla-container th,
-        .tabla-container td {
-            border: none;
-        }
-
-        /* Ajuste del modal */
-        .modal-content {
-            width: 100%;
-            max-width: none;
-        }
-
-        @media (min-width: 576px) {
-            .modal-dialog {
-                max-width: 100%;
-                margin: 1.75rem auto;
-            }
-
-            .btn-volver {
-                text-align: center;
-                margin-bottom: 20px;
-            }
-        }
-    </style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="/Front_end/css/paginaweb.css">
 </head>
 
 <body>
-    <!-- Title -->
-    <div id="titulo" class="container py-4">
-        <h2>Lista de productos</h2>
-    </div
-
-    <!-- Tabla de Registro -->
-    <div class="tabla-container container">
+    <!-- Encabezado -->
+    <header class="header">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <label for="filtrar" class="form-label">Filtrar por nombre:</label>
-                    <input type="text" class="form-control" name="filtroProducto" id="filtroProducto" step="1" 
-                    onfocusout="filtrarProducto(this);">
+            <div class="btn-menu">
+                <label for="btn-menu">☰</label>
+            </div>
+            <nav class="menu">
+                <a href="./paginaprincipal.html">Inicio</a>
+                <a href="Manual">Manual</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Barra lateral -->
+            <div class="col-md-3">
+                <div class="sidebar">
+                    <div class="logo">
+                        <a href="./paginaweb.html"></a>
+                        <img src="/Front_end/img/Logo.jpg.png" alt="Shoes Store Logo">
+                        <h2>Shoes Store</h2>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a href="./paginaweb.html"><img src="" alt="">Dashboard</a></li>
+                            <li><a href="./ListaClientes.html"><img src="" alt="">Clientes</a></li>
+                            <li><a href="/Front_end/html/ListaProductos.html"><img src="" alt="">Productos</a></li>
+                            <li><a href="./ListaVentas.html"><img src="" alt="">Ventas</a></li>
+                        </ul>
+                    </nav>
                 </div>
-                <div class="col-md-4">
-                    <label for="filtrar" class="form-label">Filtrar por estado:</label>
+            </div>
+
+            <!-- Contenido principal -->
+            <div class="col-md-9">
+                <!-- Contenedor de la tabla -->
+                <div class="tabla-container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="filtroProducto" class="form-label">Filtrar por nombre:</label>
+                            <input type="text" class="form-control" name="filtroProducto" id="filtroProducto" step="1"
+                                onfocusout="filtrarProducto(this);">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="estado" class="form-label">Filtrar por estado:</label>
+                            <select id="estado" class="form-select" onchange="filtrarProducto()">
+                                <option value="Estados">Estados</option>
+                                <option value="Habilitado">Habilitado</option>
+                                <option value="Deshabilitado">Deshabilitado</option>
+                            </select>
+                        </div>
+                    </div>
                     <br>
-                    <select id="estado" onchange="filtrarProducto()">
-                        <option value="Estados">Estados</option>
-                        <option value="Habilitado">Habilitado</option>
-                        <option value="Deshabilitado">Deshabilitado</option>
-                      </select>
-                      <button type="button" class="btn btn-primary">Filtrar</button>
+                    <div>
+                        <button type="button" class="btn btn-primary">Aplicar filtro</button>
+                        <button type="button" class="btn btn-secondary">Limpiar filtro</button>
+                        <button class="btn btn-success" class="btn btn-add-client" type="button"
+                            onclick="window.location.href='RegistroProducto.html';">Agregar Producto</button>
+                    </div>
+
+                    <!-- Tabla de productos -->
+                    <div class="table-responsive">
+                        <table class="table table-hover mt-2" id="cuerpoTablaProducto">
+                            <thead class="table-light">
+                                <tr>
+                                    <th scope="col">ID Producto</th>
+                                    <th scope="col">Nombre Producto</th>
+                                    <th scope="col">Descripción</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Precio </th>
+                                    <th scope="col">% IVA</th>
+                                    <th scope="col">% Descuento</th>
+                                    <th scope="col">% Estado</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Aquí se mostrarán los datos del producto-->
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-
-        
-        <table class="table table-hover mt-2" id="cuerpoTablaproducto">
-            <thead class="table-light">
-                <tr>
-                    <th scope="col">ID Producto</th>
-                    <th scope="col">Nombre producto</th>
-                    <th scope="col">Descripción</th>
-                    <th scope="col">Cantidad</th>
-                    <th scope="col">Precio </th>
-                    <th scope="col">% IVA</th>
-                    <th scope="col">% Descuento</th>
-                    <th scope="col">Estado</th>
-                    <th scope="col">Acciones</th>
-                </tr>
-            </thead>
-            <tbody id="cuerpoTablaProducto">
-                <!-- Aquí se mostrarán los datos del producto -->
-            </tbody>
-        </table>
     </div>
 
-    <!-- Modal Registro Persona -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-        style="padding-right: 300px;">
+    <!-- Modal Registro Producto -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content" style="width: 800px; ">
+            <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Modificar producto</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -119,6 +116,12 @@
             </div>
         </div>
     </div>
+
+    <!-- Bootstrap JS y jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Tu script personalizado -->
+    <script src="/Front_end/js/productos.js"></script>
 </body>
 
 </html>

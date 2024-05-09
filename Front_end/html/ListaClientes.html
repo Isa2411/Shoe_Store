@@ -13,91 +13,99 @@
 </head>
 
 <body>
-    <!-- Encabezado -->
     <header class="header">
         <div class="container">
             <div class="btn-menu">
                 <label for="btn-menu">☰</label>
             </div>
             <nav class="menu">
-                <a href="./paginaprincipal.html">Inicio</a>
-                <a href="./ListaClientes.html">Manual</a>
+                <a href="/Front_end/html/paginaweb.html">Inicio</a>
+                <a href="">Manual</a>
             </nav>
         </div>
     </header>
 
-    <!-- Barra lateral -->
-    <div class="sidebar">
-        <div class="logo">
-            <a href="./paginaweb.html"></a>
-            <img src="/Front_end/img/Logo.jpg.png" alt="Shoes Store Logo">
-            <h2>Shoes Store</h2>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="./paginaweb.html"><img src="" alt="">Dashboard</a></li>
-                <li><a href="./ListaClientes.html"><img src="" alt="">Clientes</a></li>
-                <li><a href="./ListaProductos.html"><img src="" alt="">Productos</a></li>
-                <li><a href="./ListaVentas.html"><img src="" alt="">Ventas</a></li>
-            </ul>
-        </nav>
-    </div>
-
-
-    <!-- Contenedor de la tabla -->
-    <div class="container-fluid tabla-container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4">
-                <label for="filtrar" class="form-label">Filtrar por nombre:</label>
-                <input type="text" class="form-control" name="filtroCliente" id="filtroCliente" step="1"
-                    onfocusout="filtrarCliente(this);">
+            <div class="col-md-3">
+                <!-- Barra lateral -->
+                <div class="sidebar">
+                    <div class="logo">
+                        <a href="./paginaweb.html"></a>
+                        <img src="/Front_end/img/Logo.jpg.png" alt="Shoes Store Logo">
+                        <h2>Shoes Store</h2>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a href="./paginaweb.html"><img src="" alt="">Dashboard</a></li>
+                            <li><a href="./ListaClientes.html"><img src="" alt="">Clientes</a></li>
+                            <li><a href="./ListaProductos.html"><img src="" alt="">Productos</a></li>
+                            <li><a href="./ListaVentas.html"><img src="" alt="">Ventas</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            <div class="col-md-4">
-                <label for="filtrar" class="form-label">Filtrar por ciudad:</label>
-                <input type="text" class="form-control" name="filtroCliente" id="filtroCliente" step="1"
-                    onfocusout="filtrarCliente(this);">
-            </div>
-            <div class="col-md-4">
-                <label for="filtrar" class="form-label">Filtrar por estado:</label>
-                <br>
-                <select id="estado" onchange="filtrarCliente()">
-                    <option value="Estados">Estados</option>
-                    <option value="Habilitado">Habilitado</option>
-                    <option value="Deshabilitado">Deshabilitado</option>
-                </select>
-                <button type="button" class="btn btn-primary">Filtrar</button>
-            </div>
-        </div>
 
-        <!-- Tabla de clientes -->
-        <div class="table-responsive">
-            <table class="table table-hover mt-2" id="cuerpoTablaCliente">
-                <thead class="table-light">
-                    <tr>
-                        <th scope="col">ID Cliente</th>
-                        <th scope="col">Tipo de identificación</th>
-                        <th scope="col">Número de identificación</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Apellido</th>
-                        <th scope="col">Teléfono</th>
-                        <th scope="col">Dirección </th>
-                        <th scope="col">Ciudad</th>
-                        <th scope="col">Estado</th>
-                        <th scope="col">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="cuerpoTablaCliente">
-                    <!-- Aquí se mostrarán los datos del cliente -->
-                </tbody>
-            </table>
+            <div class="col-md-9">
+                <!-- Contenedor de la tabla -->
+                <div class="tabla-container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="filtroNombre" class="form-label">Filtrar por nombre:</label>
+                            <input type="text" class="form-control" name="filtroNombre" id="filtroNombre" step="1">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="filtroCiudad" class="form-label">Filtrar por ciudad:</label>
+                            <input type="text" class="form-control" name="filtroCiudad" id="filtroCiudad" step="1">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="estado" class="form-label">Filtrar por estado:</label>
+                            <select id="estado" class="form-select">
+                                <option value="Estados">Estados</option>
+                                <option value="Habilitado">Habilitado</option>
+                                <option value="Deshabilitado">Deshabilitado</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="filter-actions">
+                        <button type="button" class="btn btn-primary">Aplicar filtro</button>
+                        <button type="button" class="btn btn-secondary">Limpiar filtro</button>
+                        <button class="btn btn-success" class="btn btn-add-client" type="button"
+                            onclick="window.location.href='RegistroCliente.html';">Agregar Cliente</button>
+                    </div>
+
+                    <!-- Tabla de clientes -->
+                    <div class=" table-responsive">
+                        <table class="table table-hover mt-2" id="cuerpoTablaCliente">
+                            <thead class="table-light">
+                                <tr>
+                                    <th scope="col">ID Cliente</th>
+                                    <th scope="col">Tipo de identificación</th>
+                                    <th scope="col">Número de identificación</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Apellido</th>
+                                    <th scope="col">Teléfono</th>
+                                    <th scope="col">Dirección </th>
+                                    <th scope="col">Ciudad</th>
+                                    <th scope="col">Estado</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Aquí se mostrarán los datos del cliente -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Modal Registro Persona -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-        style="padding-right: 300px;">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content" style="width: 800px; ">
+            <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Modificar cliente</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -116,10 +124,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Tu script personalizado -->
     <script src="/Front_end/js/clientes.js"></script>
-
-
-    
-
 </body>
 
 </html>

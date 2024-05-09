@@ -1,0 +1,63 @@
+ /* Estilos para el encabezado */
+ .header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .btn-menu {
+    display: none;
+}
+
+.header nav {
+    display: flex;
+}
+
+.header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+/* Estilos para la barra lateral */
+.sidebar {
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.sidebar .logo img {
+    max-width: 100px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Estilos para el contenedor del formulario */
+.formulario-container {
+    margin-top: 20px;
+}
+
+.formulario-container .form-label {
+    margin-bottom: 0.5rem;
+}
+
+.formulario-container .form-control {
+    margin-bottom: 1rem;
+}
+
+.formulario-container .btn {
+    margin-right: 10px;
+}
